@@ -1,0 +1,79 @@
+//7/10/2019
+//v^2=v0^2+2ax
+
+public class Kinematicformula3{
+  //formula input v
+	public static void Velocity(double In_velocity, double Acceleration,double Distance) {
+		double Velocity =  Math.sqrt(In_velocity*In_velocity+ 2*Acceleration*Distance);
+		System.out.println(Velocity);
+	}
+	//formula input v0
+	public static void In_Velocity(double Acceleration, double Distance,double Velocity) {
+		double In_Velocity = Math.sqrt(Velocity*Velocity-2*Acceleration*Distance);
+		System.out.println(In_Velocity);
+	}
+	//formula input a
+	public static void Acceleration(double Distance, double Velocity,double In_Velocity) {
+		double Accerlation = (Velocity*Velocity)-(In_Velocity*In_Velocity)/2/Distance;
+		System.out.println(Accerlation);
+	}
+	//formula input x
+	public static void Distance(double Velocity, double In_Velocity,double Accerleration) {
+		double Distance = (Velocity*Velocity-In_Velocity*In_Velocity)/2* Accerleration;
+		System.out.println(Distance);
+	
+	}
+
+	
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		//asking what to do
+		System.out.println("v^2=v0^2+2ax");
+		System.out.println("What do you want to solve for?");
+		System.out.println("Velocity");
+		System.out.println("In_velocity");
+		System.out.println("Acceleration");
+		System.out.println("Distance");
+		String output = input.nextLine();
+		//For Velocity
+		if(output.contentEquals("Velocity")) {
+			System.out.println("What is the Initial Velocity");
+			double In_Velocity = input.nextDouble();
+			System.out.println("What is the Accerlation");
+			double Acceleration = input.nextDouble();
+			System.out.println("What is the Distance");
+			double Distance = input.nextDouble();
+			Kinematicformula3.Velocity(In_Velocity, Acceleration, Distance);
+		}
+		//For Initial Velocity
+		if(output.contentEquals("Initial Velocity")) {
+			System.out.println("What is the Accerlation");
+			double Acceleration = input.nextDouble();
+			System.out.println("What is the Distance");
+			double Distance = input.nextDouble();
+			System.out.println("What is the Velocity");
+			double Velocity = input.nextDouble();
+			Kinematicformula3.Velocity(Acceleration, Distance, Velocity);
+		}
+		//For Acceleration
+		if(output.contentEquals("Acceleration")) {
+			System.out.println("What is the Distance");
+			double Distance = input.nextDouble();
+			System.out.println("What is the Velocity");
+			double Velocity = input.nextDouble();
+			System.out.println("What is the Initial Velocity");
+			double In_Velocity = input.nextDouble();
+			Kinematicformula3.Acceleration(Distance, Velocity,In_Velocity);
+		}
+		//For Distance
+		if(output.contentEquals("Distance")) {
+			System.out.println("What is the Velocity");
+			double Velocity = input.nextDouble();
+			System.out.println("What is the Initial Velocity");
+			double In_Velocity = input.nextDouble();
+			System.out.println("What is the Accerlation");
+			double Accerlation = input.nextDouble();
+			Kinematicformula3.Velocity(Velocity,In_Velocity,Accerlation);
+		}
+	}
+}
